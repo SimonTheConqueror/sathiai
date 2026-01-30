@@ -118,7 +118,7 @@ const App: React.FC = () => {
     await handleApiKeySelection();
 
     try {
-      const ai = new GoogleGenAI({ apiKey: "AIzaSyDnnMEe3KgtLb9kuEHS7nCUnLh-p_FFOhA" });
+      const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
       
       inputAudioCtxRef.current = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 16000 });
       outputAudioCtxRef.current = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 24000 });
